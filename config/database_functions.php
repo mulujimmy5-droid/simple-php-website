@@ -22,3 +22,38 @@ function getUsers(PDO $pdo): array
     // Return all matching users as an array.
     return $stmt->fetchAll();
 }
+
+/**
+ * Create a new user in the database.
+ *
+ * @param PDO $pdo Active PDO database connection.
+ * @param string $fullName User's full name.
+ * @param string $email User's email address.
+ * @param string $phone User's phone number.
+ * @param int $age User's age.
+ * @param string $gender User's gender.
+ * @return bool True when the user is successfully created.
+ */
+function createUser(
+    PDO $pdo,
+    string $fullName,
+    string $email,
+    string $phone,
+    int $age,
+    string $gender
+): bool {
+    // Use a prepared statement so user input is safely handled.
+    $stmt = $pdo->prepare(
+        'INSERT INTO users (full_name, email, phone, age, gender)
+         VALUES (:full_name, :email, :phone, :age, :gender)'
+    );
+
+    // Execute the query with the supplied user values.
+    return $stmt->execute([
+        ':full_name' => $fullName,
+        ':email' => $email,
+        ':phone' => $phone,
+        ':age' => $age,
+        ':gender' => $gender,
+    ]);
+}
