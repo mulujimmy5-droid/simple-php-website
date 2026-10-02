@@ -31,9 +31,7 @@ The form must collect the following information:
 ### FR-03 - Client-Side Validation
 
 JavaScript must validate the form before it is submitted.
-
 The browser should check that:
-
 - Required fields are not empty.
 - The email address has a valid format.
 - The age is within the accepted range.
@@ -45,27 +43,19 @@ The browser should check that:
 After successful client-side validation, the form must send the information to the PHP backend.
 
 ### FR-05 - Server-Side Validation
-
 PHP must validate all submitted information again.
-
 Server-side validation is required even when JavaScript validation has already been performed.
 
 ### FR-06 - Store Data in MySQL
-
 Valid information must be stored in the MySQL database.
-
 PHP must use prepared statements when inserting data into the database.
 
 ### FR-07 - Provide User Feedback
-
 After form submission, the application must inform the user whether the submission was successful or whether an error occurred.
 
 ### FR-08 - Display Submitted Records
-
 The application must provide a page that allows the form owner to retrieve and view records submitted through the form.
-
 The records page should display information such as:
-
 - Full Name
 - Email Address
 - Phone Number
@@ -73,9 +63,7 @@ The records page should display information such as:
 - Gender
 
 The submitted records must be retrieved from MySQL.
-
-User-submitted records should not be publicly exposed to other
-users.
+User-submitted records should not be publicly exposed to other users.
 
 ---
 

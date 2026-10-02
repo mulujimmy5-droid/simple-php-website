@@ -10,7 +10,7 @@ The project uses HTML, CSS, JavaScript, PHP and MySQL.
 
 The purpose of this project is to understand how the different parts of a web application communicate with each other.
 
-In particular, the project demonstrates the following flow:
+In particular, the project demonstrates the following flow to and fro:
 
 Browser → HTML/CSS/JavaScript → PHP → MySQL → PHP → Browser
 
@@ -66,12 +66,7 @@ The project is being developed locally using:
 ## 5. Database Environment
 
 The computer already contains a MySQL 8.0 server running as the Windows service `MySQL80`.
-
-The MySQL server is using port `3306`.
-
-Therefore, the project will use the existing MySQL server instead
-of the MySQL server included with XAMPP.
-
+Therefore, the project will use the existing MySQL server instead of the MySQL server included with XAMPP.
 XAMPP MySQL does not need to be running for this project.
 
 ## 6. Current Architecture
@@ -91,7 +86,6 @@ MySQL Workbench will be used to manage and inspect the MySQL database.
 ## 7. Development Approach
 
 The project will be developed incrementally.
-
 Each major feature will be:
 
 1. Designed.
@@ -104,7 +98,6 @@ Each major feature will be:
 ## 8. Current Status
 
 The development environment has been successfully established.
-
 Completed:
 - VS Code installed.
 - XAMPP installed.

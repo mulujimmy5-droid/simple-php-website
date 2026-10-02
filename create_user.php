@@ -4,21 +4,29 @@
 require_once __DIR__ . '/config/database_functions.php';
 
 $message = '';
+$error = '';
 
 // Process the form when it is submitted.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Collect the values submitted by the form.
+    // Collect and clean the values submitted by the form.
     $fullName = trim($_POST['full_name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $phone = trim($_POST['phone'] ?? '');
     $age = (int) ($_POST['age'] ?? 0);
     $gender = trim($_POST['gender'] ?? '');
 
-    // Send the form data to the database.
-    createUser($pdo, $fullName, $email, $phone, $age, $gender);
+    // Validate the submitted values before saving them.
+    if ($fullName === '' || $email === '' || $phone === '' || $age <= 0 || $gender === '') {
+        $error = 'Please complete all fields with valid values.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = 'Please enter a valid email address.';
+    } else {
+        // Save the valid form data to the database.
+        createUser($pdo, $fullName, $email, $phone, $age, $gender);
 
-    $message = 'User saved successfully.';
+        $message = 'User saved successfully.';
+    }
 }
 
 ?>
@@ -35,6 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if ($message !== ''): ?>
         <p><?= htmlspecialchars($message) ?></p>
+    <?php endif; ?>
+
+    <?php if ($error !== ''): ?>
+        <p><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
 
     <form method="POST">
