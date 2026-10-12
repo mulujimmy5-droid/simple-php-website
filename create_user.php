@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,8 +65,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Set the title displayed in the browser tab. -->
     <title>Create User</title>
 
+    <!-- Load the stylesheet used to style the form. -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+    
+    <!-- <h1 style="color:red;text-align:justify;" >NOTE</h1>
+    <p style = "text-align:justify;">
+        Hi! I'm currently testing a web project and I'd really appriciate your help.<br>Please take a few minutes to fill out and submit this form. Your response will help me test whether everything is working properly and identify anything that needs improvement.
+    </p> -->
 
     <!-- Display the page heading. -->
     <h1>Enter User Information</h1>

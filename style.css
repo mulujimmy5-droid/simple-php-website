@@ -1,0 +1,66 @@
+/* Set the overall page appearance. */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Keep the main heading centered. */
+h1 {
+    text-align: center;
+}
+
+/* Create a simple card around the form. */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Add spacing between form fields. */
+form p {
+    margin-bottom: 20px;
+}
+
+/* Make labels clear and easy to read. */
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* Style text, email, number, and other input fields. */
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Make the Save User button easy to see and use. */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Add a small visual change when the button is hovered. */
+button:hover {
+    opacity: 0.85;
+    background: grey;
+    color: white;
+}
+
+/* Center the View Users link below the form. */
+body > p {
+    text-align: center;
+}
